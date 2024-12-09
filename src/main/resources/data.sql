@@ -1,4 +1,4 @@
-INSERT INTO player (name, mmr, rank, region, primary_role, secondary_role, wins, losses, games_played)
+/*INSERT INTO player (name, mmr, rank, region, primary_role, secondary_role, wins, losses, games_played)
 VALUES
     ('Player1', 800, 'Bronze 4', 'EUW', 'Top', 'Jungle', 5, 3, 8),
     ('Player2', 1200, 'Silver 3', 'EUW', 'Mid', 'ADC', 10, 7, 17),
@@ -20,3 +20,5 @@ VALUES
     ('Player18', 4000, 'Master', 'EUW', 'Jungle', 'ADC', 50, 2, 52),
     ('Player19', 1000, 'Silver 4', 'NA', 'Support', 'Mid', 3, 3, 6),
     ('Player20', 800, 'Bronze 4', 'EUW', 'ADC', 'Jungle', 4, 5, 9);
+  
+ */
