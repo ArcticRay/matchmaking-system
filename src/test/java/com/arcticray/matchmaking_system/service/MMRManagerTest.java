@@ -77,31 +77,27 @@ class MMRManagerTest {
     @Test
     void testUpdatePlayerRank() {
         // Arrange
-        player.setMmr(2000);
+        player.setMmr(1350); // MMR within "Silver" rank
 
         // Act
         mmrManager.updatePlayerRank(player);
 
         // Assert
-        assertEquals("Platinum", player.getRank());
-
-        // Console output
-        System.out.println("Test Passed: Player rank updated correctly.");
-        System.out.printf("Player MMR: %d, New Rank: %s%n", player.getMmr(), player.getRank());
+        assertEquals("Silver 2", player.getRank()); // Expected updated rank
+        System.out.printf("Test Passed: Player rank updated to %s.%n", player.getRank());
     }
 
     @Test
     void testUpdatePlayerRank_NoChange() {
         // Arrange
-        player.setMmr(1200);
-        player.setRank("Silver");
+        player.setMmr(1480); // MMR within "Silver 1"
+        player.setRank("Silver 1");
 
         // Act
         mmrManager.updatePlayerRank(player);
 
         // Assert
-        assertEquals("Silver", player.getRank());
-        System.out.println("Test Passed: No rank change for the player.");
-        System.out.printf("Player MMR: %d, Rank: %s%n", player.getMmr(), player.getRank());
+        assertEquals("Silver 1", player.getRank()); // No change in rank
+        System.out.printf("Test Passed: Player rank remained %s.%n", player.getRank());
     }
 }
