@@ -5,10 +5,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class MMRService {
 
-    public int calculateMMR(int currentMMR, boolean isWin, int opponentMMR) {
-        int kFactor = 32; // influence factor
-        double expectedScore = 1 / (1 + Math.pow(10, (opponentMMR - currentMMR) / 400.0));
-        return isWin ? (int) (currentMMR + kFactor * (1 - expectedScore))
-                : (int) (currentMMR - kFactor * expectedScore);
+    public int calculateMMR(int teamMMR, boolean isWin, int opponentMMRSum) {
+        int kFactor = 32; // weight
+        double expectedScore = 1 / (1 + Math.pow(10, (opponentMMRSum - teamMMR) / 2000.0));
+        return isWin
+                ? (int) (teamMMR + kFactor * (1 - expectedScore))
+                : (int) (teamMMR - kFactor * expectedScore);
     }
 }

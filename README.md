@@ -62,3 +62,34 @@ A backend system to simulate and enhance a matchmaking system inspired by League
    - Automated system to create teams based on MMR and preferences.
 
 ---
+
+## 🧩 Programming Principles and Best Practices
+
+This project adheres to key programming principles and best practices to ensure high-quality, maintainable, and scalable code. Below are the guiding principles followed in the design and implementation:
+
+- **Encapsulation**:
+
+  - Each class has a single, well-defined responsibility.
+  - Data is hidden and accessed through dedicated methods to maintain integrity.
+
+- **Reusability**:
+
+  - Utility classes like `RankManager` centralize logic, making it reusable across the application.
+  - Services like `MMRManager` are modular and decoupled, promoting reuse in other contexts.
+
+- **Separation of Concerns (SoC)**:
+
+  - The project separates business logic (`MMRManager`), data models (`Player`), and utility logic (`RankManager`) to improve clarity and reduce dependencies.
+
+- **Scalability**:
+
+  - The code is designed to be easily extendable, allowing new features (e.g., additional ranks, advanced matchmaking criteria) to be added with minimal refactoring.
+
+- **Testability**:
+
+  - The project includes comprehensive unit tests for all critical components, ensuring correctness and making future changes safe and predictable.
+
+- **Clean Code**:
+  - Clear naming conventions, modular structure, and concise methods are used to enhance readability and maintainability.
+
+This focus on quality reflects the importance of well-engineered systems, especially in complex domains like matchmaking, where modularity, correctness, and extensibility are key.
