@@ -1,3 +1,5 @@
+![Work in Progress](https://img.shields.io/badge/status-WIP-orange?style=flat-square)
+
 # Matchmaking System
 
 A backend system to simulate and enhance a matchmaking system inspired by League of Legends. Built using **Spring Boot** and **Gradle**, focusing on scalability, fairness, and flexibility.
