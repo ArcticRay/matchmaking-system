@@ -20,5 +20,5 @@ VALUES
     ('Player18', 4000, 'Master', 'EUW', 'Jungle', 'ADC', 50, 2, 52),
     ('Player19', 1000, 'Silver 4', 'NA', 'Support', 'Mid', 3, 3, 6),
     ('Player20', 800, 'Bronze 4', 'EUW', 'ADC', 'Jungle', 4, 5, 9);
-  
+
  */
