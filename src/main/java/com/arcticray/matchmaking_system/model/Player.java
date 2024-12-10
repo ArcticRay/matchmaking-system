@@ -28,9 +28,6 @@ public class Player {
     @Transient
     private double winrate;
 
-    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RoleStats> roleStats = new ArrayList<>();
-
     // Constructors, Getters, and Setters
     public Player() {}
 
@@ -45,18 +42,6 @@ public class Player {
         this.losses = 0;
         this.gamesPlayed = 0;
     }
-
-    public void addRoleStats(RoleStats stats) {
-        this.roleStats.add(stats);
-        stats.setPlayer(this);
-    }
-
-    public void removeRoleStats(RoleStats stats) {
-        this.roleStats.remove(stats);
-        stats.setPlayer(null);
-    }
-
-
 
 
     // Getter and Setter
@@ -104,10 +89,6 @@ public class Player {
         return winrate;
     }
 
-    public List<RoleStats> getRoleStats() {
-        return roleStats;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -152,7 +133,4 @@ public class Player {
         this.winrate = winrate;
     }
 
-    public void setRoleStats(List<RoleStats> roleStats) {
-        this.roleStats = roleStats;
-    }
 }
