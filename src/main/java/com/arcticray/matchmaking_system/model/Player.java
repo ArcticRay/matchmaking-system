@@ -1,9 +1,12 @@
 package com.arcticray.matchmaking_system.model;
 
+import com.arcticray.matchmaking_system.service.RankManager;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.*;
+
+import com.arcticray.matchmaking_system.service.RoleManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +22,8 @@ public class Player {
     private int mmr;
     private String rank;
     private String region;
-    private String primaryRole;
-    private String secondaryRole;
+    private RoleManager.Role primaryRole;
+    private RoleManager.Role secondaryRole;
     private int wins;
     private int losses;
     private int gamesPlayed;
@@ -29,12 +32,14 @@ public class Player {
     private double winrate;
 
     // Constructors, Getters, and Setters
-    public Player() {}
+    public Player() {
 
-    public Player(String name, int mmr, String rank, String region, String primaryRole, String secondaryRole) {
+    }
+
+    public Player(String name, int mmr, String region, RoleManager.Role primaryRole, RoleManager.Role secondaryRole) {
         this.name = name;
         this.mmr = mmr;
-        this.rank = rank;
+        this.rank = RankManager.getRankForMMR(mmr);
         this.region = region;
         this.primaryRole = primaryRole;
         this.secondaryRole = secondaryRole;
@@ -65,11 +70,11 @@ public class Player {
         return region;
     }
 
-    public String getPrimaryRole() {
+    public RoleManager.Role getPrimaryRole() {
         return primaryRole;
     }
 
-    public String getSecondaryRole() {
+    public RoleManager.Role getSecondaryRole() {
         return secondaryRole;
     }
 
@@ -109,11 +114,11 @@ public class Player {
         this.region = region;
     }
 
-    public void setPrimaryRole(String primaryRole) {
+    public void setPrimaryRole(RoleManager.Role primaryRole) {
         this.primaryRole = primaryRole;
     }
 
-    public void setSecondaryRole(String secondaryRole) {
+    public void setSecondaryRole(RoleManager.Role secondaryRole) {
         this.secondaryRole = secondaryRole;
     }
 
